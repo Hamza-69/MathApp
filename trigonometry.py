@@ -10,7 +10,7 @@ def to_radians(angle):
     return (angle / 180) * pi()
 
 def to_degrees(angle):
-    return (angle / pi()) * 180
+    return round(angle / pi() * 180)
 
 def principle_value(angle):
     while angle >= 360:
@@ -18,7 +18,7 @@ def principle_value(angle):
     return angle
 
 def sin(x):
-    x = principle_value(x)
+    x = principle_value(to_degrees(x))
     if x == 90:
         return 1
     elif x == -90:
@@ -37,7 +37,7 @@ def sin(x):
     return sum
 
 def cos(x):
-    x = principle_value(x)
+    x = principle_value(to_degrees(x))
     if x == 0:
         return 1
     elif x == -180 or x == 180:
@@ -56,33 +56,33 @@ def cos(x):
     return sum
 
 def tan(x):
+    x = principle_value(to_degrees(x))
     if x == 90 or x == -90:
         return "Math Error"
     if x == 45 or x == -135:
         return 1
     if x == -45 or x == 135:
         return -1
-    x = principle_value(x)
     return sin(x) / cos(x)
 
 def cot(x):
+    x = principle_value(to_degrees(x))
     if x == 0 or x == 180 or x == -180:
         return "Math Error"
     if x == 45 or x == -135:
         return 1
     if x == -45 or x == 135:
         return -1
-    x = principle_value(x)
     return 1 / tan(x)
 
 def sec(x):
+    x = principle_value(to_degrees(x))
     if x == 90 or x == -90:
         return "Math Error"
-    x = principle_value(x)
     return 1 / cos(x)
 
 def csc(x):
+    x = principle_value(to_degrees(x))
     if x == 0 or x == 180 or x == -180:
         return "Math Error"
-    x = principle_value(x)
     return 1 / sin(x)
