@@ -21,10 +21,23 @@ def ln(x):
 			term *= -1 * x
 			sum += term / i
 		return sum
-	N = 0
+	n = 0
 	y = x
 	while y>1:
-		N += 1
+		n += 1
 		y /= 2
 
-	return N * ln(2) + ln(y)
+	return n * ln(2) + ln(y)
+def log(x,b):
+	if b == x:
+		return 1
+	elif x == 1:
+		return 0
+	elif b <= 1:
+		return "Math Error"
+	x_copy = x
+	n = 0
+	while x_copy % b == 0:
+		n += 1
+		x_copy /= b
+	return	n + ln(x_copy)/ln(b)
