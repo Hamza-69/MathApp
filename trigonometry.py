@@ -50,14 +50,22 @@ def cos(x):
         sum += term
     return sum
 def tan(x):
+    if x == 90 or x == -90:
+        print("Math Error")
     x = principle_value(x)
     return sin(x)/cos(x)
 def cot(x):
+    if x == 0 or x == 180 or x == -180:
+        print("Math Error")
     x = principle_value(x)
     return 1/tan(x)
 def sec(x):
+    if x == 90 or x == -90:
+        print("Math Error")
     x = principle_value(x)
     return 1/cos(x)
 def csc(x):
+    if x == 0 or x == 180 or x == -180:
+        print("Math Error")
     x = principle_value(x)
     return 1/sin(x)
