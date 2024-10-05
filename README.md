@@ -1,5 +1,7 @@
 # MathApp
 
+![MathApp](https://github.com/hamza-69/MathApp/blob/main/untitled.gif)
+
 **MathApp** is a Python-based application designed to perform a variety of mathematical operations with ease. It includes modules for trigonometry, combinatorics, logarithms, and more. The goal of the project is to simplify complex mathematical computations through a user-friendly interface.
 
 ---
@@ -27,4 +29,4 @@
 1. Clone the repository.
 2. Run `mainloop.py` to start interacting with the application.
 3. Choose the type of operation you want to perform, and input the required data.
-4. The project contains several Python files related to mathematical functions. Here's a well-designed GitHub description for your repository:
+4. The project contains several Python files related to mathematical functions.
