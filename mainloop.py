@@ -85,7 +85,7 @@ def substitute_function(function_call):
     except:
         print("Invalid input! Make sure the function name is valid and has been defined.")
     with open("function_calls.py", "w") as f:
-        f.write(f"from functions_list import *\n")
+        f.write(f"from functions_list import *\nfrom trigonometry import *\nfrom logarithims import *\nfrom proprietry import *\nfrom Combinatorics import *\n")
 
 def main():
     while True:
