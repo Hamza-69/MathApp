@@ -1,1 +1,1 @@
-import functions_list
+from functions_list import *
