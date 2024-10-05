@@ -20,7 +20,8 @@ def principle_value(angle):
     return angle
 
 def sin(x):
-    x = principle_value(to_degrees(x))
+    x1 = x
+    x = round(principle_value(to_degrees(x)))
     if x == 90:
         return 1
     elif x == -90:
@@ -31,14 +32,15 @@ def sin(x):
         return -1 / 2
     elif x == 180 or x == 0 or x == -180:
         return 0
-    term = x
+    term = x1
     sum = term
     for i in range(1, 1000):
-        term *= -1 * (x ** 2) / (2 * i * (2 * i + 1))
+        term *= -1 * (x1 ** 2) / (2 * i * (2 * i + 1))
         sum += term
     return sum
 
 def cos(x):
+    x1 = x
     x = principle_value(to_degrees(x))
     if x == 0:
         return 1
@@ -53,41 +55,45 @@ def cos(x):
     term = 1
     sum = term
     for i in range(1, 1000):
-        term *= -1 * (x ** 2) / ((2 * i - 1) * (2 * i))
+        term *= -1 * (x1 ** 2) / ((2 * i - 1) * (2 * i))
         sum += term
     return sum
 
 def tan(x):
-    x = principle_value(to_degrees(x))
+    x1 = x
+    x = round(principle_value(to_degrees(x)))
     if x == 90 or x == -90:
         return "Math Error"
     if x == 45 or x == -135:
         return 1
     if x == -45 or x == 135:
         return -1
-    return sin(x) / cos(x)
+    return sin(x1) / cos(x1)
 
 def cot(x):
-    x = principle_value(to_degrees(x))
+    x1 = x
+    x = round(principle_value(to_degrees(x)))
     if x == 0 or x == 180 or x == -180:
         return "Math Error"
     if x == 45 or x == -135:
         return 1
     if x == -45 or x == 135:
         return -1
-    return 1 / tan(x)
+    return 1 / tan(x1)
 
 def sec(x):
-    x = principle_value(to_degrees(x))
+    x1 = x
+    x = round(principle_value(to_degrees(x)))
     if x == 90 or x == -90:
         return "Math Error"
-    return 1 / cos(x)
+    return 1 / cos(x1)
 
 def csc(x):
-    x = principle_value(to_degrees(x))
+    x1 = x
+    x = round(principle_value(to_degrees(x)))
     if x == 0 or x == 180 or x == -180:
         return "Math Error"
-    return 1 / sin(x)
+    return 1 / sin(x1)
 
 def arcsin(x):
     if not(-1<= x <= 1):
