@@ -8,6 +8,9 @@ def exp(x):
 		sum += term
 	return sum
 
+def exp_base(x,b):
+	return b**x
+
 def ln(x):
 	if x <=0:
 		return "Math Error"
