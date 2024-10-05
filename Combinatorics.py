@@ -6,10 +6,10 @@ def factorial(n):
     return n * factorial(n-1)
 
 def combination(n, r):
-    if  n>r:
+    if  r>n:
         return "Math Error"
     return factorial(n)/(factorial(r)*factorial(n-r))
 def permutation(n, r):
-    if  n>r:
+    if  r>n:
         return "Math Error"
     return factorial(n)/factorial(n-r)
