@@ -84,8 +84,8 @@ def substitute_function(function_call):
         importlib.reload(function_calls)
     except:
         print("Invalid input! Make sure the function name is valid and has been defined.")
-        with open("function_calls.py", "w") as f:
-            f.write("")
+    with open("function_calls.py", "w") as f:
+        f.write(f"from functions_list import *\n")
 
 def main():
     while True:
