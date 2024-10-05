@@ -1,4 +1,6 @@
 import importlib
+import function_calls
+import functions_list
 
 
 functions = {
@@ -69,7 +71,6 @@ def take_function(function_string):
         with open("functions_list.py", "a") as f:
             f.write(function_code)
         print(f"Function '{function_name}' added")
-        import functions_list
         importlib.reload(functions_list)
         return function
     except:
@@ -80,7 +81,6 @@ def substitute_function(function_call):
     try:
         with open("function_calls.py", "a") as f:
             f.write(f"print({function_call})\n")
-        import function_calls
         importlib.reload(function_calls)
     except:
         print("Invalid input! Make sure the function name is valid and has been defined.")
@@ -106,7 +106,7 @@ def main():
         else:
             substitute_function(action)
     with open("functions_list.py", "w") as f:
-        f.write("")
+        f.write("from functions_list import *\nfrom trigonometry import *\nfrom logarithims import *\nfrom proprietry import *\nfrom Combinatorics import *\n")
         f.close()
 
 
